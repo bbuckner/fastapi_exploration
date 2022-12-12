@@ -9,6 +9,9 @@ from .routers import posts, users, auth, vote
 # example if fastapi_exploration is your current working directory:
 # uvicorn app.main:app --reload
 
+# This is what creates tables if they dont already exist.
+# Dont need this with alembic as it would make the
+# database out of sync with the current revision.
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
