@@ -13,8 +13,9 @@ from .routers import posts, users, auth, vote
 
 # This is what creates tables if they dont already exist.
 # Dont need this with alembic as it would make the
-# database out of sync with the current revision.
-models.Base.metadata.create_all(bind=engine)
+# database out of sync with the current revision:
+
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
