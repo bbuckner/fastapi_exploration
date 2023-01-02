@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import models
-from .database import engine
+# from . import models
+# from .database import engine
 from .routers import posts, users, auth, vote
 
 # command to start app on uvicorn server:
@@ -10,6 +10,9 @@ from .routers import posts, users, auth, vote
 # example if fastapi_exploration is your current working directory:
 # uvicorn app.main:app --reload
 # The reload flag reloads on save.
+
+# For production:
+# uvicorn app.main:app --host=0.0.0.0 --port=${PORT:-5000}
 
 # This is what creates tables if they dont already exist.
 # Dont need this with alembic as it would make the
